@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:12:32 by ctacconi          #+#    #+#             */
-/*   Updated: 2024/03/11 19:13:40 by ctacconi         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:09:58 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ char	*update_storage(char *storage)
 	size_t	i;
 
 	i = 0;
-	new_storage = NULL;
 	while (storage[i] != '\0' && storage[i] != '\n')
 		i++;
 	new_storage = ft_substr(storage, (i + 1), ft_strlen(storage) - i);

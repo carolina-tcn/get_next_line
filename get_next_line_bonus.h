@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctacconi <ctacconi@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 19:50:33 by ctacconi          #+#    #+#             */
-/*   Updated: 2024/03/11 16:04:36 by ctacconi         ###   ########.fr       */
+/*   Created: 2024/03/11 16:09:25 by ctacconi          #+#    #+#             */
+/*   Updated: 2024/03/11 16:13:53 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <unistd.h>
 # include <sys/types.h>
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <limits.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10

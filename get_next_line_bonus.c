@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctacconi <ctacconi@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 17:12:32 by ctacconi          #+#    #+#             */
-/*   Updated: 2024/03/11 16:15:21 by ctacconi         ###   ########.fr       */
+/*   Created: 2024/03/11 16:08:49 by ctacconi          #+#    #+#             */
+/*   Updated: 2024/03/11 16:15:12 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*fill_storage(int fd, char *storage)
 {
@@ -76,27 +76,27 @@ static char	*update_storage(char *storage)
 char	*get_next_line(int fd)
 {
 	char			*line;
-	static char		*storage;
+	static char		*storage[OPEN_MAX];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	storage = fill_storage(fd, storage);
-	if (!storage)
+	storage[fd] = fill_storage(fd, storage[fd]);
+	if (!storage[fd])
 		return (NULL);
-	line = extract_line(storage);
+	line = extract_line(storage[fd]);
 	if (!line)
 	{
-		free(storage);
-		storage = NULL;
+		free(storage[fd]);
+		storage[fd] = NULL;
 		return (NULL);
 	}
-	storage = update_storage(storage);
-	if (!storage)
+	storage[fd] = update_storage(storage[fd]);
+	if (!storage[fd])
 		return (free(line), NULL);
-	if (*storage == '\0')
+	if (*storage[fd] == '\0')
 	{
-		free(storage);
-		storage = NULL;
+		free(storage[fd]);
+		storage[fd] = NULL;
 	}
 	return (line);
 }

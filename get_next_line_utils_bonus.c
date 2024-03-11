@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctacconi <ctacconi@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 16:11:29 by ctacconi          #+#    #+#             */
-/*   Updated: 2024/03/11 16:11:32 by ctacconi         ###   ########.fr       */
+/*   Created: 2024/02/28 17:52:33 by ctacconi          #+#    #+#             */
+/*   Updated: 2024/03/11 15:53:02 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 size_t	ft_strlen(char *str)
 {

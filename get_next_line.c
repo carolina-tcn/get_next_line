@@ -6,13 +6,13 @@
 /*   By: ctacconi <ctacconi@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:12:32 by ctacconi          #+#    #+#             */
-/*   Updated: 2024/03/11 16:15:21 by ctacconi         ###   ########.fr       */
+/*   Updated: 2024/03/11 19:13:40 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*fill_storage(int fd, char *storage)
+char	*fill_storage(int fd, char *storage)
 {
 	ssize_t		bytes_read;
 	char		*buffer;
@@ -41,7 +41,7 @@ static char	*fill_storage(int fd, char *storage)
 	return (storage);
 }
 
-static char	*extract_line(char *storage)
+char	*extract_line(char *storage)
 {
 	char		*line;
 	size_t		i;
@@ -57,7 +57,7 @@ static char	*extract_line(char *storage)
 	return (line);
 }
 
-static char	*update_storage(char *storage)
+char	*update_storage(char *storage)
 {
 	char	*new_storage;
 	size_t	i;
